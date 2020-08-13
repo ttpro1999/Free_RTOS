@@ -13,6 +13,9 @@ void setup()
   Serial.begin(9600);
   pinmode(8,INPUT_PULLUP);
   pinmode(13,OUTPUT);
+  vTaskCreate(Task_Controlled,"Task_Controlled",100,NULL,1,NuLL);
+  vTaskCreate(Task_print,"Task_Print",100,NULL,1,NuLL);  
+}
 }
 
 
